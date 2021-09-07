@@ -20,11 +20,17 @@ export const getFilteredTrips = ({ trips, filters }) => {
   }
   // TODO - filter by tags
   if (filters.tags.length > 0) {
-    output = output.filter((trip) => trip.tags.includes(filters.tags));
+    output = output.filter((trip) =>
+      filters.tags.some((tag) => trip.tags.includes(tag))
+    );
   }
 
   // TODO - sort by cost descending (most expensive goes first)
-
+  output = output.sort((trip1, trip2) => {
+    const cost1 = parseFloat(trip1.cost.replace('$', '').replace(',', ''));
+    const cost2 = parseFloat(trip2.cost.replace('$', '').replace(',', ''));
+    return cost2 - cost1;
+  });
   return output;
 };
 
@@ -52,8 +58,13 @@ export const getTripsForCountry = ({ trips }, countryCode) => {
 // action name creator
 const reducerName = 'trips';
 const createActionName = name => `app/${reducerName}/${name}`;
+
 // action types
+
+
 // action creators
+
+
 // reducer
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
