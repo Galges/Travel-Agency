@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './TripSummary.scss';
-import {Col} from 'react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 
-const TripSummary = ({id, image, name, cost, days, tags}) => (
+const TripSummary = ({ id, image, name, cost, days, tags }) => (
   <Col xs={12} sm={6} lg={4} className={styles.column}>
     <Link to={`/trip/${id}`} className={styles.link}>
       <article className={styles.component}>
@@ -14,11 +14,15 @@ const TripSummary = ({id, image, name, cost, days, tags}) => (
           <span>{days} days</span>
           <span>from {cost}</span>
         </div>
-        <div className={styles.tags}>
-          {tags.map(tag => (
-            <span className={styles.tag} key={tag.toString()}>{tag}</span>
-          ))}
-        </div>
+        {tags && tags.length > 0 ? (
+          <div className={styles.tags}>
+            {tags.map((tag) => (
+              <span className={styles.tag} key={tag.toString()}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
       </article>
     </Link>
   </Col>
@@ -27,10 +31,10 @@ const TripSummary = ({id, image, name, cost, days, tags}) => (
 TripSummary.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   image: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   intro: PropTypes.string,
-  cost: PropTypes.string,
-  days: PropTypes.number,
+  cost: PropTypes.string.isRequired,
+  days: PropTypes.number.isRequired,
   tags: PropTypes.array,
 };
 
