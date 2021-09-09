@@ -16,6 +16,7 @@ import styles from './Trip.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Trip = ({
+  id,
   error,
   name,
   image,
@@ -24,7 +25,6 @@ const Trip = ({
   description,
   country,
   intro,
-  ...otherOptions
 }) => {
   if (error) return <NotFound />;
   else
@@ -98,12 +98,7 @@ const Trip = ({
             <Col xs={12}>
               <PageTitle text="Trip options" />
               <OrderForm
-                tripCost={cost}
-                tripDetails={{
-                  name: name,
-                  id: otherOptions.id,
-                  countryCode: country.alpha3Code,
-                }}
+                tripCost={cost} tripName={name} tripId={id} countryCode={country.alpha3Code}
               />
             </Col>
           </Row>

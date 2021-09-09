@@ -1,4 +1,44 @@
 {
-  "orders": []
-   
+  "orders": [
+    {
+      "car-rental": "suv",
+      "accommodation": "hotel",
+      "features": [
+        "security",
+        "pool",
+        "kitchen",
+        "all-inclusive"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "Check 1",
+      "contact": "Check 1",
+      "start-date": "2021-09-21T17:22:12.000Z",
+      "totalCost": "$72,633",
+      "tripId": "5cc1d10107e2be6064ff9129",
+      "tripName": "Surprising jaunt in admirable United Arab Emirates",
+      "countryCode": "ARE",
+      "id": 1
+    },
+    {
+      "car-rental": "suv",
+      "accommodation": "hotel",
+      "features": [
+        "security",
+        "pool",
+        "kitchen",
+        "all-inclusive"
+      ],
+      "adults": "3",
+      "children": 0,
+      "name": "Check 1",
+      "contact": "Check 1",
+      "start-date": "2021-09-21T17:22:12.000Z",
+      "totalCost": "$217,899",
+      "tripId": "5cc1d10107e2be6064ff9129",
+      "tripName": "Surprising jaunt in admirable United Arab Emirates",
+      "countryCode": "ARE",
+      "id": 2
+    }
+  ]
 }
